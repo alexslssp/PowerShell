@@ -1,0 +1,8 @@
+if ($error -ne $null){
+    Send-MailMessage `
+    -From sender@domain.com `
+    -To recipient@domain.com `
+    -Subject "Errors found in <place details here to identify the script having errors>" `
+    -Body "$error" `
+    -SmtpServer 0.0.0.0
+    }
