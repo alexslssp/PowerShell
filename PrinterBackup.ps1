@@ -1,3 +1,4 @@
+$mailserver = x.x.x.x
 $momento=get-date -uformat "%Y_%m_%d"
 foreach ($server in get-content c:\printservers.ini) {
 #Lista simples dentro do arquivo ini
@@ -8,6 +9,6 @@ if ($error -ne $null){
     -To ti.infra@cdb.com.br `
     -Subject "Erros no backup dos servidores de impressão" `
     -Body "$error" `
-    -SmtpServer 172.21.20.21
+    -SmtpServer $mailserver
     }
 }
